@@ -1,0 +1,53 @@
+{
+  "manifest_version": 3,
+  "name": "Gewee",
+  "version": "1.3",
+  "description": "Experience the future of browsing with Gewee. Built for the Google Product Family Hackathon using Gemini API.",
+  "default_locale": "en",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "alarms",
+    "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "src/background/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "src/background/config.js",
+        "src/background/agent_logic.js",
+        "src/dashboard/notebook.js",
+        "src/content/content_script.js"
+      ]
+    }
+  ],
+  "icons": {
+    "16": "assets/icon.png",
+    "48": "assets/icon.png",
+    "128": "assets/icon.png"
+  },
+  "action": {
+    "default_title": "Gewee",
+    "default_icon": "assets/icon.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/media/*.png",
+        "src/dashboard/dashboard.html"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ]
+}

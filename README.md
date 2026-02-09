@@ -1,64 +1,60 @@
-# Gewee: The Mission-Oriented AI Browser Agent 🚀
+# Gewee 🧬
+**The AI-Powered Browser Companion**
 
-**Gewee** is a context-aware Chrome Extension powered by **Gemini 3 Flash**. It transforms the browser from a passive window into an active collaborator that observes, reasons, and acts on your behalf.
+> Built for the Google Chrome Built-in AI Challenge 2025.
+> Powered by **Gemini 1.5 Flash**.
 
----
+Gewee is not just another chatbot. It's an **intelligent, context-aware sidekick** that lives in your browser. It observes your browsing session (when you allow it), understands the context, and proactively offers help—whether it's deep diving into research, drafting replies, or fact-checking content.
 
-## 🧠 Core Agentic Pillars
+![Banner](assets/promo_banner.png)
 
-### 1. Adaptive Persona System
-Gewee autonomously shifts its "mission" based on the website you are visiting:
-* **🎓 Tutor Mode:** Active on technical documentation (Wikipedia, Hugging Face). Highlights complex terms and provides instant "Explain This" layers.
-* **✨ Muse Mode:** Active on creative platforms (LinkedIn, Facebook). Drafts contextually perfect social posts and replies.
-* **🛡️ Guardian Mode:** Hard-locked on login pages. Focuses on data masking and identifying "Dark Pattern" manipulative UI.
+## 🌟 Key Features
 
-### 2. Spatially Aware UI
-* **Non-Destructive Drafting:** Our "Secretary" tool uses a collision-detection algorithm to ensure draft buttons never overlap website labels.
-* **Zero-Reflow Intelligence:** Optimized DOM extraction using `textContent` ensures 60fps performance even on heavy pages.
+### 1. 🧠 Context-Aware Mascot
+Gewee sits quietly in the corner of your screen. Using **Gemini 1.5**, it analyzes the page content and your actions to determine its "Persona":
+- **🛡️ Guardian**: Detects forms and sensitive inputs, offering to mask your data.
+- **✨ Muse**: Detects creative fields (social media, blogs) and offers drafting assistance.
+- **🎓 Tutor**: Detects educational content and offers to simplify or quiz you.
 
-### 3. Efficiency & Privacy
-* **Token-Pruning:** Implements a strict character limit and "Standby Mode" to minimize API costs and cognitive noise.
-* **Domain Blacklisting:** Automatically enters "Ghost Mode" on sensitive sites to ensure user privacy and avoid AI inception loops.
+### 2. 🔐 Privacy First (BYOK)
+We believe in privacy and security. Gewee uses a **Bring Your Own Key** architecture.
+- Your Gemini API Key is stored **locally** in your browser (`chrome.storage.local`).
+- It is **never** sent to our servers.
+- You can remove it instantly with a single click in the Dashboard.
 
----
+### 3. 🚀 Smart Dashboard
+Ideally integrated into your browser flow, the Dashboard is your command center:
+- **Notebook**: Auto-saves your insights and Gemini's responses.
+- **Deep Linking**: Seamlessly jump back to the exact tab where an idea was generated.
+- **Settings**: Manage your API Key and Trigger Modes (`Active` vs `Chill`).
 
-## ⚡ The Interactive Reasoning Suite
-Gewee provides a "Deep Dive" menu for specific, high-intent actions:
-* **🔍 Deep Research:** Performs a multi-layered analysis of the current topic, synthesizing DOM information into a comprehensive summary.
-* **✔️ Fact Check:** Cross-references claims found on the page with verified data sources to highlight potential inaccuracies.
-* **📊 Visualize:** Converts complex data tables or technical descriptions into structured, easy-to-read visual insights.
-* **✨ Creative:** Leverages Gemini 3's creative capabilities for brainstorming, alternative drafting, or tone-specific summaries.
+## 🛠️ Installation & Setup
 
----
+1. **Download source code**
+   Clone this repo or download the ZIP.
 
-## 🛠️ Tech Stack
-* **AI:** Gemini 3 Flash (Contextual Reasoning & Semantic Extraction)
-* **Frontend:** JavaScript (ES6+), Shadow DOM (UI Isolation)
-* **Architecture:** Chrome Extension Manifest V3
+2. **Load into Chrome**
+   - Open `chrome://extensions/`
+   - Enable **Developer mode** (top right).
+   - Click **"Load unpacked"**.
+   - Select the folder containing `manifest.json`.
 
----
+3. **Add Your Brain 🧠**
+   - Click the **Gewee Extension Icon** or the mascot.
+   - You will be prompted: *"I need a brain!"*
+   - Click the alert bubble to open the **Dashboard**.
+   - Paste your **Gemini API Key** in the Settings card.
+   - Click **Save**.
 
-## ⚙️ Advanced Customization
-Users have **full control** over the agent's **behavior** via the Settings Dashboard:
-* **Persona Sensitivity:** Adjust the **"Trigger Mode"** (Chill, Default, or Active) to decide how frequently the agent intervenes.
-* **Memory Management:** One-click option to clear all saved insights and technical terms from your local session.
+## 💻 Tech Stack
+- **Frontend**: Vanilla JS (Lightweight, High Performance), HTML5, CSS3.
+- **AI Model**: Google Gemini 1.5 Flash (via API).
+- **Architecture**: Chrome Extension MV3 (Service Worker, Content Scripts, Shadow DOM).
 
----
-
-## 🚀 Getting Started
-1. **Clone the repo:** `git clone https://github.com/Jirong00/Gewee.git`
-2. **Load the extension:** Navigate to `chrome://extensions/`, enable "Developer Mode", and select "Load unpacked" for the project folder.
-3. **Configure API:** Right-click the Gewee icon > **Options** to securely save your Gemini 3 API key.
-4. **Visit technical docs:** See **Tutor Mode** highlight terms and offer instant explanations on sites like Wikipedia.
-5. **Verify Secretary Mode:** Navigate to LinkedIn/YouTube. Click a comment box to see the context-aware **"Draft Response"** button appear.
-6. **Verify Guardian Mode:** Visit the GitHub Sign-in page. Observe the mascot pulsing **Blue**, signaling active security.
-7. **Test Efficiency:** Open a blank tab. The mascot will fade to 50% opacity (**Standby Mode**), proving no tokens are wasted.
-8. **Explore the Notebook:** Open the extension dashboard to review your saved insights and technical term captures.
-
----
-
-## 📖 Project Vision
-Gewee was designed to solve the "Passive Assistant" problem. Instead of a sidebar you have to talk to, Gewee lives in the DOM, proactively sensing what you need before you ask. By combining Gemini 3’s reasoning with a spatially-aware UI, we’ve built an agent that doesn't just talk about the web—it helps you operate it.
+## 🏆 Hackathon Notes
+- **Manifest V3**: Fully compliant.
+- **Permissions**: Uses `activeTab` and `scripting` strictly for requested analysis.
+- **Safety**: Includes safety filter handling and network error resilience.
 
 ---
-Built for the **Gemini 3 Hackathon 2026**.
+*Crafted with ❤️ for the future of browsing.*
