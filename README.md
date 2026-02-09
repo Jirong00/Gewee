@@ -6,8 +6,8 @@
 
 ### 1. Adaptive Persona System
 Gewee autonomously shifts its "mission" based on the website you are visiting:
-- **🎓 Tutor Mode:** Active on technical documentation (Wikipedia, Hugging Face). Highlighting complex terms and providing instant "Explain This" layers.
-- **✨ Muse Mode:** Active on creative platforms (LinkedIn, Facebook). Drafting contextually perfect social posts and replies.
+- **🎓 Tutor Mode:** Active on technical documentation (Wikipedia, Hugging Face). Highlights complex terms and provides instant "Explain This" layers.
+- **✨ Muse Mode:** Active on creative platforms (LinkedIn, Facebook). Drafts contextually perfect social posts and replies.
 - **🛡️ Guardian Mode:** Hard-locked on login pages. Focuses on data masking and identifying "Dark Pattern" manipulative UI.
 
 ### 2. Spatially Aware UI
@@ -24,7 +24,17 @@ Gewee autonomously shifts its "mission" based on the website you are visiting:
 - **Architecture:** Chrome Extension Manifest V3
 
 ## 🚀 Getting Started
-1. Clone the repo.
-2. Add your Gemini API Key to `config.js`.
-3. Load the folder as an "Unpacked Extension" in Chrome.
-4. Visit any technical documentation to see the **Tutor Mode** in action!
+1. **Clone the repo:** `git clone https://github.com/Jirong00/Gewee.git`
+2. **Load the extension:** Navigate to `chrome://extensions/`, enable "Developer Mode", and select "Load unpacked" for the project folder.
+3. **Configure API:** Right-click the Gewee icon > Options to securely save your Gemini 3 API key.
+4. **Visit technical docs:** See **Tutor Mode** highlight terms and offer instant explanations on sites like Wikipedia.
+5. **Verify Secretary Mode:** Navigate to LinkedIn/YouTube. Click a comment box to see the context-aware "Draft Response" button appear.
+6. **Verify Guardian Mode:** Visit the GitHub Sign-in page. Observe the mascot pulsing **Blue**, signaling active security and masking logic.
+7. **Test Efficiency:** Open a blank tab. The mascot will fade to 50% opacity (**Standby Mode**), proving no tokens are being wasted.
+8. **Explore the Notebook:** Open the extension dashboard to review your saved insights and technical term captures.
+
+## 📖 Project Vision
+Gewee was designed to solve the "Passive Assistant" problem. Instead of a sidebar you have to talk to, Gewee lives in the DOM, proactively sensing what you need before you ask. By combining Gemini 3’s reasoning with a spatially-aware UI, we’ve built an agent that doesn't just talk about the web—it helps you operate it.
+
+---
+Built for the **Gemini 3 Hackathon 2026**.
