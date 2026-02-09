@@ -1,0 +1,81 @@
+{
+    "extName": {
+        "message": "Gewee"
+    },
+    "extDescription": {
+        "message": "Experience the future of browsing with Gewee."
+    },
+    "btn_research": {
+        "message": "Deep Research"
+    },
+    "btn_factcheck": {
+        "message": "Fact Check"
+    },
+    "btn_visualize": {
+        "message": "Visualize"
+    },
+    "btn_creative": {
+        "message": "Creative"
+    },
+    "mascot_architecting": {
+        "message": "Architecting your $MODE$ plan in $LANG$...",
+        "placeholders": {
+            "MODE": {
+                "content": "$1"
+            },
+            "LANG": {
+                "content": "$2"
+            }
+        }
+    },
+    "prompt_research": {
+        "message": "Act as a Senior Research Architect. Analyze the following content from '$1' and provide a structured output:\n\n1. **Executive Summary**: A concise, 1-sentence summary (ideal for a chat bubble).\n2. **Deep Dive Analysis**: A comprehensive breakdown of the key arguments, evidence, and context.\n3. **Strategic Missions**: Generate 4 tailored follow-up prompts based on this content:\n   - **[Deep Research]**: A prompt to explore related topics.\n   - **[Fact Check]**: A prompt to verify specific claims found here.\n   - **[Visualize]**: A prompt to graph or map the data found here.\n   - **[Creative]**: A prompt to reimagine this content (e.g., story, poem).\n\nContent:\n$2",
+        "placeholders": {
+            "1": {
+                "content": "$1"
+            },
+            "2": {
+                "content": "$2"
+            }
+        }
+    },
+    "prompt_factcheck": {
+        "message": "Act as a professional fact-checker. Scrutinize the content from '$1'. Verify the claims against known facts, identify any logical fallacies, and flag potential biases.\n\nContent:\n$2",
+        "placeholders": {
+            "1": {
+                "content": "$1"
+            },
+            "2": {
+                "content": "$2"
+            }
+        }
+    },
+    "prompt_visualize": {
+        "message": "Act as a data visualization expert. Based on the content from '$1', propose 3 compelling data visualizations (charts, graphs, or diagrams) that would best represent the key information. Describe each visualization in detail.\n\nContent:\n$2",
+        "placeholders": {
+            "1": {
+                "content": "$1"
+            },
+            "2": {
+                "content": "$2"
+            }
+        }
+    },
+    "prompt_creative": {
+        "message": "Act as a creative muse. Use the content from '$1' as inspiration to generate a unique creative piece (e.g., a short story, a poem, or a screenplay scene). \n\nContent:\n$2",
+        "placeholders": {
+            "1": {
+                "content": "$1"
+            },
+            "2": {
+                "content": "$2"
+            }
+        }
+    },
+    "label_details": {
+        "message": "Details"
+    },
+    "label_current_page": {
+        "message": "Current Page"
+    }
+}

@@ -1,0 +1,835 @@
+/* Input Group */
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.input-group input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-family: 'Inter', sans-serif;
+}
+
+.status-msg {
+    font-size: 12px;
+    margin-top: 5px;
+    min-height: 18px;
+}
+
+:root {
+    --primary: #4D96FF;
+    --bg-sidebar: #f8f9fa;
+    --bg-main: #ffffff;
+    --text-main: #1f1f1f;
+    --text-muted: #6c757d;
+    --border: #e9ecef;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    height: 100vh;
+    background: var(--bg-main);
+    color: var(--text-main);
+}
+
+/* Sidebar */
+.sidebar {
+    width: 240px;
+    background: var(--bg-sidebar);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 40px;
+    padding-left: 10px;
+}
+
+.logo-icon {
+    font-size: 24px;
+}
+
+.brand h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    background: linear-gradient(90deg, #4D96FF 0%, #6BCB77 50%, #FFD93D 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    /* More breathing room */
+    border: none;
+    background: transparent;
+    border-radius: 12px;
+    font-size: 15px;
+    /* Larger */
+    font-weight: 500;
+    color: var(--text-muted);
+    cursor: pointer;
+    text-align: left;
+    transition: 0.2s;
+}
+
+.nav-item:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: var(--text-main);
+}
+
+.nav-item.active {
+    background: #e7f1ff;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Sub-navigation */
+.nav-subgroup {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    /* slightly more gap */
+    padding-left: 12px;
+    /* Less indent, move closer to align better visually */
+    margin-bottom: 20px;
+}
+
+.nav-subitem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border: none;
+    background: transparent;
+    border-radius: 8px;
+    font-size: 14px;
+    /* Larger */
+    color: var(--text-muted);
+    cursor: pointer;
+    text-align: left;
+    transition: 0.2s;
+}
+
+.nav-subitem:hover {
+    background: rgba(0, 0, 0, 0.03);
+    color: var(--text-main);
+}
+
+.nav-subitem.active {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    color: var(--text-main);
+    font-weight: 500;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.dot.red {
+    background: #FF6B6B;
+}
+
+.dot.blue {
+    background: #4D96FF;
+}
+
+.dot.green {
+    background: #6BCB77;
+}
+
+.dot.yellow {
+    background: #FFD93D;
+}
+
+.dot.grey {
+    background: #999;
+}
+
+/* Nav Row for Edit Button */
+.nav-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 10px;
+}
+
+.nav-row .nav-subitem {
+    flex: 1;
+}
+
+.edit-group-btn {
+    opacity: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 10px;
+    color: #999;
+    padding: 4px;
+    transition: 0.2s;
+}
+
+.nav-row:hover .edit-group-btn {
+    opacity: 1;
+}
+
+.edit-group-btn:hover {
+    color: var(--primary);
+    transform: scale(1.2);
+}
+
+/* Main Content */
+.content-area {
+    flex: 1;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+.view {
+    display: none;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.view.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 32px;
+    /* Bigger Title */
+    font-weight: 800;
+    /* Bolder */
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+
+/* Search */
+#search-notes {
+    padding: 12px 20px;
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    width: 100%;
+    max-width: 600px;
+    /* Centered & Limited Width */
+    font-size: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+    transition: 0.2s;
+    margin: 0 auto;
+    /* Center block if flex parent allows, but header is flex-between */
+}
+
+#search-notes:focus {
+    border-color: var(--primary);
+    box-shadow: 0 4px 12px rgba(77, 150, 255, 0.1);
+    outline: none;
+}
+
+/* Notebook Grid - Responsive Masonry-ish */
+.notes-grid {
+    display: grid;
+    gap: 24px;
+    /* Mobile First: 1 Column */
+    grid-template-columns: 1fr;
+}
+
+/* Tablet: 2 Columns */
+@media (min-width: 768px) {
+    .notes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop: 3 Columns */
+@media (min-width: 1200px) {
+    .notes-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.note-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    /* More internal space */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    transition: 0.2s;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.note-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.note-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.note-date {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+/* Note Colors */
+.note-card.color-red {
+    border-left: 4px solid #FF6B6B;
+}
+
+.note-card.color-blue {
+    border-left: 4px solid #4D96FF;
+}
+
+.note-card.color-green {
+    border-left: 4px solid #6BCB77;
+}
+
+.note-card.color-yellow {
+    border-left: 4px solid #FFD93D;
+}
+
+.note-card.color-grey {
+    border-left: 4px solid #999;
+}
+
+.note-content {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+    overflow-wrap: break-word;
+}
+
+.card-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.card-colors {
+    display: flex;
+    gap: 4px;
+    opacity: 0;
+    /* Hidden by default, show on hover */
+    transition: opacity 0.2s;
+}
+
+.note-card:hover .card-colors {
+    opacity: 1;
+}
+
+.cc-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.cc-dot:hover {
+    transform: scale(1.3);
+}
+
+.cc-dot.red {
+    background: #FF6B6B;
+}
+
+.cc-dot.blue {
+    background: #4D96FF;
+}
+
+.cc-dot.green {
+    background: #6BCB77;
+}
+
+.cc-dot.yellow {
+    background: #FFD93D;
+}
+
+.cc-dot.grey {
+    background: #999;
+}
+
+.note-actions {
+    margin-top: auto;
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.icon-btn {
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: 0.2s;
+}
+
+.icon-btn:hover {
+    opacity: 1;
+}
+
+.icon-btn.delete:hover {
+    color: #d93025;
+}
+
+/* Note Footer */
+.note-footer {
+    border-top: 1px solid var(--border);
+    padding-top: 12px;
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.source-link {
+    font-size: 12px;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.source-link:hover {
+    text-decoration: underline;
+}
+
+.gemini-btn {
+    background: linear-gradient(135deg, #4D96FF, #6BCB77);
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.gemini-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(77, 150, 255, 0.3);
+}
+
+/* Settings */
+.settings-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+/* Setting Card */
+.setting-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    position: relative;
+    /* For Pointer Positioning */
+    transition: all 0.3s ease;
+}
+
+/* Guidance Animation Class */
+.highlight-pulse {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(77, 150, 255, 0.2);
+    animation: borderPulse 2s infinite;
+    z-index: 10;
+    /* Ensure visibility */
+}
+
+@keyframes borderPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(77, 150, 255, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(77, 150, 255, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(77, 150, 255, 0);
+    }
+}
+
+.guidance-pointer {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 32px;
+    animation: bounceLeft 1s infinite alternate;
+    pointer-events: none;
+    z-index: 20;
+}
+
+@keyframes bounceLeft {
+    from {
+        transform: translate(10px, -50%);
+    }
+
+    to {
+        transform: translate(-10px, -50%);
+    }
+}
+
+.setting-card h3 {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+}
+
+.setting-card p {
+    margin: 0 0 20px 0;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+/* Mode Toggles */
+.mode-toggles {
+    display: flex;
+    gap: 10px;
+}
+
+.mode-btn {
+    flex: 1;
+    padding: 16px;
+    border: 1px solid var(--border);
+    background: #fff;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    transition: 0.2s;
+}
+
+.mode-btn:hover {
+    border-color: var(--primary);
+    background: #f8faff;
+}
+
+.mode-btn.active {
+    border-color: var(--primary);
+    background: #e7f1ff;
+    color: var(--primary);
+}
+
+/* Switch */
+.toggle-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: var(--primary);
+}
+
+input:checked+.slider:before {
+    transform: translateX(24px);
+}
+
+/* Danger Zone */
+.danger-zone button {
+    background: #fee2e2;
+    color: #dc2626;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.danger-zone button:hover {
+    background: #fecaca;
+}
+
+/* Search - Moved to Header Section */
+
+/* Theme Dots */
+.color-picker {
+    display: flex;
+    gap: 8px;
+}
+
+.theme-dot {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.theme-dot:hover {
+    transform: scale(1.1);
+}
+
+/* Modal Styles */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-overlay.active {
+    display: flex;
+    animation: fadeIn 0.2s ease;
+}
+
+.modal-content {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    transform: scale(0.95);
+    transition: transform 0.2s;
+}
+
+.modal-overlay.active .modal-content {
+    transform: scale(1);
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 16px;
+    color: #333;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    outline: none;
+    box-sizing: border-box;
+    /* Fix padding issue */
+}
+
+.modal-content input:focus {
+    border-color: var(--primary);
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.btn-primary,
+.btn-secondary {
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: 500;
+    border: none;
+    transition: 0.2s;
+}
+
+.btn-secondary {
+    background: #f1f3f4;
+    color: #555;
+}
+
+.btn-secondary:hover {
+    background: #e8eaed;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+/* --- Dispatcher Modal (Glassmorphism) --- */
+/* Note: reusing modal-overlay for background */
+
+.dispatcher-content {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 24px;
+    width: 340px;
+    text-align: center;
+    position: relative;
+    transform: scale(0.9);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.modal-overlay.active .dispatcher-content {
+    transform: scale(1);
+}
+
+#dispatcher-title {
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #4D96FF 0%, #6BCB77 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.mode-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+/* Specific overrides for dispatcher buttons inside dashboard */
+.dispatcher-content .mode-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+    height: auto;
+}
+
+.dispatcher-content .mode-btn:hover {
+    background: white;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-color: #4D96FF;
+}
+
+.mode-icon {
+    font-size: 24px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.mode-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #444;
+}
+
+/* Icon Images Sizing */
+.icon img,
+.mode-icon img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    display: block;
+}
+
+.mode-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

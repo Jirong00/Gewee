@@ -1,0 +1,31 @@
+{
+    "extName": {
+        "message": "Gewee"
+    },
+    "extDescription": {
+        "message": "使用 Gewee 体验未来的浏览方式。"
+    },
+    "btn_research": {
+        "message": "深度研究"
+    },
+    "btn_factcheck": {
+        "message": "事实核查"
+    },
+    "btn_visualize": {
+        "message": "可视化"
+    },
+    "btn_creative": {
+        "message": "创意灵感"
+    },
+    "mascot_architecting": {
+        "message": "正在用$LANG$为您构建$MODE$计划...",
+        "placeholders": {
+            "MODE": {
+                "content": "$1"
+            },
+            "LANG": {
+                "content": "$2"
+            }
+        }
+    }
+}

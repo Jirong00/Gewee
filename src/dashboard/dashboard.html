@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gewee</title>
+    <link rel="icon" type="image/png" href="../../assets/icon.png">
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="brand">
+            <!-- <div class="logo-icon">✨</div> -->
+            <h2>Gewee</h2>
+        </div>
+        <nav>
+            <button class="nav-item active" data-view="notebook" data-filter="all">
+                <span class="icon"><img src="../../assets/media/Notebook.png" alt="Notebook"></span> Notebook
+            </button>
+            <div class="nav-subgroup" id="notebook-filters">
+                <button class="nav-subitem active" data-filter="all">All Notes</button>
+
+                <div class="nav-row">
+                    <button class="nav-subitem" data-filter="red">
+                        <span class="dot red"></span> <span class="label" data-key="red">Important</span>
+                    </button>
+                    <button class="edit-group-btn" data-key="red">✎</button>
+                </div>
+
+                <div class="nav-row">
+                    <button class="nav-subitem" data-filter="blue">
+                        <span class="dot blue"></span> <span class="label" data-key="blue">Info</span>
+                    </button>
+                    <button class="edit-group-btn" data-key="blue">✎</button>
+                </div>
+
+                <div class="nav-row">
+                    <button class="nav-subitem" data-filter="green">
+                        <span class="dot green"></span> <span class="label" data-key="green">Code</span>
+                    </button>
+                    <button class="edit-group-btn" data-key="green">✎</button>
+                </div>
+
+                <div class="nav-row">
+                    <button class="nav-subitem" data-filter="yellow">
+                        <span class="dot yellow"></span> <span class="label" data-key="yellow">Idea</span>
+                    </button>
+                    <button class="edit-group-btn" data-key="yellow">✎</button>
+                </div>
+
+                <div class="nav-row">
+                    <button class="nav-subitem" data-filter="grey">
+                        <span class="dot grey"></span> <span class="label" data-key="grey">Inbox</span>
+                    </button>
+                    <button class="edit-group-btn" data-key="grey">✎</button>
+                </div>
+            </div>
+
+            <button class="nav-item" data-view="settings">
+                <span class="icon"><img src="../../assets/media/setting.png" alt="Settings"></span> Settings
+            </button>
+        </nav>
+    </div>
+
+    <main class="content-area">
+        <!-- Notebook View -->
+        <section id="view-notebook" class="view active">
+            <header>
+                <h1>Notebook</h1>
+                <div class="header-actions">
+                    <input type="text" id="search-notes" placeholder="Search insights..." />
+                </div>
+            </header>
+            <div class="notes-grid" id="notes-grid">
+                <!-- Notes injected here -->
+                <div class="empty-state">No saved notes yet.</div>
+            </div>
+        </section>
+
+        <!-- Settings View -->
+        <section id="view-settings" class="view">
+            <header>
+                <h1>Settings</h1>
+            </header>
+            <div class="settings-container">
+                <div class="setting-card">
+                    <h3>Gemini API Key</h3>
+                    <p>Enter your API key to power the AI.</p>
+                    <div class="input-group">
+                        <input type="password" id="api-key-input" placeholder="Paste your key here..." />
+                        <button id="save-key-btn" class="btn-primary">Save</button>
+                        <button id="remove-key-btn" class="btn-secondary" title="Remove Key">🗑️</button>
+                    </div>
+                    <p class="status-msg" id="key-status"></p>
+                </div>
+
+                <div class="setting-card">
+                    <h3>Trigger Mode</h3>
+                    <p>Decide when the observer activates.</p>
+                    <div class="mode-toggles">
+                        <button class="mode-btn" data-mode="CHILL" title="Manual Only">
+                            <span class="icon"><img src="../../assets/media/chill.png" alt="Chill"></span> Chill
+                        </button>
+                        <button class="mode-btn active" data-mode="DEFAULT" title="On Load (Once)">
+                            <span class="icon"><img src="../../assets/media/default.png" alt="Default"></span> Default
+                        </button>
+                        <button class="mode-btn" data-mode="ACTIVE" title="Proactive (Scroll/Error)">
+                            <span class="icon"><img src="../../assets/media/Active.png" alt="Active"></span> Active
+                        </button>
+                    </div>
+                </div>
+
+                <div class="setting-card">
+                    <h3>Privacy Guard</h3>
+                    <div class="toggle-row">
+                        <span>Disable on Login Pages</span>
+                        <label class="switch">
+                            <input type="checkbox" id="login-guard" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="setting-card">
+                    <h3>Appearance</h3>
+                    <div class="toggle-row">
+                        <span>Theme Color</span>
+                        <div class="color-picker">
+                            <button class="theme-dot" style="--bg: #4D96FF" data-theme="blue"></button>
+                            <button class="theme-dot" style="--bg: #FF6B6B" data-theme="red"></button>
+                            <button class="theme-dot" style="--bg: #6BCB77" data-theme="green"></button>
+                            <button class="theme-dot" style="--bg: #FFD93D" data-theme="yellow"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="setting-card danger-zone">
+                    <h3>Data Management</h3>
+                    <button id="clear-memory-btn">Clear All Memory</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Custom Rename Modal -->
+    <div id="rename-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h3>Rename Group</h3>
+            <input type="text" id="rename-input" placeholder="Enter new name" />
+            <div class="modal-actions">
+                <button id="rename-cancel" class="btn-secondary">Cancel</button>
+                <button id="rename-save" class="btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dispatcher Modal (Gemini Bridge) -->
+    <div id="dispatcher-modal" class="modal-overlay">
+        <!-- Reusing overlay class for centering, but custom content style -->
+        <div class="dispatcher-content glass-panel">
+            <div id="dispatcher-title">Ask Gemini</div>
+            <div class="mode-grid">
+                <button class="mode-btn" data-mode="research">
+                    <span class="mode-icon"><img src="../../assets/media/DeepResearch.png" alt="Research"></span>
+                    <span class="mode-label">Deep Research</span>
+                </button>
+                <button class="mode-btn" data-mode="factcheck">
+                    <span class="mode-icon"><img src="../../assets/media/FactCheck.png" alt="Fact Check"></span>
+                    <span class="mode-label">Fact Check</span>
+                </button>
+                <button class="mode-btn" data-mode="visualize">
+                    <span class="mode-icon"><img src="../../assets/media/Visualize.png" alt="Visualize"></span>
+                    <span class="mode-label">Visualize</span>
+                </button>
+                <button class="mode-btn" data-mode="creative">
+                    <span class="mode-icon"><img src="../../assets/media/Creative.png" alt="Creative"></span>
+                    <span class="mode-label">Creative</span>
+                </button>
+            </div>
+            <div class="dispatcher-loader">
+                <div class="loader-spinner"></div>
+                <div class="loader-text">Architecting your plan...</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="notebook.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="g-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#4D96FF" />
+            <stop offset="50%" style="stop-color:#6BCB77" />
+            <stop offset="100%" style="stop-color:#FFD93D" />
+        </linearGradient>
+    </defs>
+    <!-- Simple Bold G -->
+    <text x="50%" y="54%" font-family="Arial, sans-serif" font-weight="900" font-size="110" fill="url(#g-gradient)" text-anchor="middle" dy=".35em">G</text>
+</svg>

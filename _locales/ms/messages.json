@@ -1,0 +1,31 @@
+{
+    "extName": {
+        "message": "Gewee"
+    },
+    "extDescription": {
+        "message": "Alami masa depan pelayaran web dengan Gewee."
+    },
+    "btn_research": {
+        "message": "Penyelidikan Mendalam"
+    },
+    "btn_factcheck": {
+        "message": "Semakan Fakta"
+    },
+    "btn_visualize": {
+        "message": "Visualisasi"
+    },
+    "btn_creative": {
+        "message": "Kreatif"
+    },
+    "mascot_architecting": {
+        "message": "Sedang merangka pelan $MODE$ anda dalam Bahasa $LANG$...",
+        "placeholders": {
+            "MODE": {
+                "content": "$1"
+            },
+            "LANG": {
+                "content": "$2"
+            }
+        }
+    }
+}
