@@ -23,6 +23,17 @@ Gewee autonomously shifts its "mission" based on the website you are visiting:
 - **Frontend:** JavaScript (ES6+), Shadow DOM (UI Isolation)
 - **Architecture:** Chrome Extension Manifest V3
 
+##⚡ The Interactive Reasoning Suite
+Gewee provides a "Deep Dive" menu that allows users to trigger specific, high-intent actions based on the current page content:
+🔍 **Deep Research: **Triggers Gemini 3 to perform a multi-layered analysis of the current topic, synthesizing information from the entire DOM into a comprehensive summary.
+✔️ **Fact Check: **Automatically cross-references claims found on the page with verified data sources, highlighting potential inaccuracies in real-time.
+📊 **Visualize: **Converts complex data tables or technical descriptions into structured, easy-to-read visual insights.
+✨ **Creative: **Leverages Gemini 3's creative capabilities to help with brainstorming, alternative drafting, or summarizing content in specialized tones.
+##⚙️ Advanced Customization (Settings Dashboard)
+Users have **full control** over the agent's **behavior** through a centralized Settings Dashboard:
+**Persona Sensitivity:** Adjust the **"Trigger Mode"** (Chill, Default, or Active) to decide how frequently the agent intervenes.
+**Memory Management:** One-click option to clear all saved insights and technical terms from your local session.
+
 ## 🚀 Getting Started
 1. **Clone the repo:** `git clone https://github.com/Jirong00/Gewee.git`
 2. **Load the extension:** Navigate to `chrome://extensions/`, enable "Developer Mode", and select "Load unpacked" for the project folder.
